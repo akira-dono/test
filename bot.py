@@ -27,7 +27,6 @@ async def start(message: types.Message):
 
 @dp.message_handler(state=UserText.text)
 async def answer(message: types.Message, state: FSMContext):
-    #! Скорее всего придется переписать
     update_text(message.from_user.id, message.text)
     await state.finish()
     await message.answer("Готово.")

@@ -7,8 +7,7 @@ table = """
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     tg_id INTEGER UNSIGNED,
-    text TEXT,
-    
+    text TEXT
 )
 """
 # links TEXT
@@ -18,7 +17,7 @@ db.commit()
 
 
 def insert_user(tg_id):
-    sql = """INSERT INTO users (tg_id, text) VALUES (?, "", ?)"""
+    sql = """INSERT INTO users (tg_id, text) VALUES (?, "")"""
     cursor.execute(sql, (tg_id, ))
     db.commit()
 
