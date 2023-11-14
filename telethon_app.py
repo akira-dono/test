@@ -1,7 +1,6 @@
 from telethon import TelegramClient, events, types
 from database import get_user_by_tg_id, get_text, get_user_ids
 from config import api_id, api_hash
-from aiogram_handlers import bot;
 # from telethon.tl.functions.channels import JoinChannelRequest
 
 
