@@ -5,7 +5,6 @@ from bot import bot;
 # from telethon.tl.functions.channels import JoinChannelRequest
 
 client = TelegramClient('tg_session', api_id, api_hash, system_version='4.16.30-vxCUSTOM')
-#!some commenty
 async def check_chat_type(chat_id):
     entity = await client.get_entity(chat_id)
     if isinstance(entity, types.User):
@@ -40,6 +39,7 @@ async def my_event_handler(event):
 #! entity = await client.get_entity(link)
 #! await client(JoinChannelRequest(entity))
 
+print("Telethon App Started")
 client.start()
 client.run_until_disconnected()
 
