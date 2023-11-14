@@ -1,13 +1,9 @@
 from telethon import TelegramClient, events, types
-from db import get_user_by_tg_id, get_text, get_user_ids
-# from config import api_id, api_hash, chat_id #? Твои импорты из конфига
-from bot import bot;
+from database import get_user_by_tg_id, get_text, get_user_ids
+from config import api_id, api_hash
+from aiogram_handlers import bot;
 # from telethon.tl.functions.channels import JoinChannelRequest
 
-api_id = 23047312
-api_hash = "6e469679dacc02eabedac9cb7ad4f697"
-chat_id = 6686205537
-bot_id=6524989605
 
 client = TelegramClient('tg_session', api_id, api_hash, system_version='4.16.30-vxCUSTOM')
 async def check_chat_type(chat_id):
