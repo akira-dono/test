@@ -4,6 +4,11 @@ from db import get_user_by_tg_id, get_text, get_user_ids
 from bot import bot;
 # from telethon.tl.functions.channels import JoinChannelRequest
 
+api_id = 23047312
+api_hash = "6e469679dacc02eabedac9cb7ad4f697"
+chat_id = 6686205537
+bot_id=6524989605
+
 client = TelegramClient('tg_session', api_id, api_hash, system_version='4.16.30-vxCUSTOM')
 async def check_chat_type(chat_id):
     entity = await client.get_entity(chat_id)
@@ -19,8 +24,6 @@ async def check_chat_type(chat_id):
 
 @client.on(events.NewMessage)
 async def my_event_handler(event):
-    
-    #! Скорее всего придется переписать
     ids = get_user_ids()
     for id in ids:
         await client.get_dialogs()
@@ -42,5 +45,3 @@ async def my_event_handler(event):
 print("Telethon App Started")
 client.start()
 client.run_until_disconnected()
-
-

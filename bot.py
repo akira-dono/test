@@ -6,11 +6,11 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from db import get_user_by_tg_id, insert_user, update_text
 
-bot = Bot(token="6866096574:AAFYPz9Of6vXk3uQ8zY3Wzb4WeC9dFyfres")
+bot = Bot(token="6524989605:AAEd4iyRiJb8XIuL_h7VFRmCJshA3wDhI5c")
 
-storage = MemoryStorage();
+storage = MemoryStorage()
 
-dp = Dispatcher(bot, storage=storage);
+dp = Dispatcher(bot, storage=storage)
 
 class UserText(StatesGroup):
     text = State()
@@ -20,17 +20,17 @@ async def start(message: types.Message):
     chat_id = message.from_user.id
     if not get_user_by_tg_id(chat_id):
         insert_user(chat_id)
-    await message.answer("Lorem ipsum dolor sit amet")
-    await UserText.text.set();
+    await message.answer("Введите ключевое слово, по которому будут определяться важные сообщения.")
+    await UserText.text.set()
 
 
 
 @dp.message_handler(state=UserText.text)
-async def hui(message: types.Message, state: FSMContext):
+async def answer(message: types.Message, state: FSMContext):
     #! Скорее всего придется переписать
     update_text(message.from_user.id, message.text)
     await state.finish()
-    await message.answer("Lorem ipsum....")
+    await message.answer("Готово.")
 
 async def start_bot():
     print("Bot started")
@@ -44,4 +44,4 @@ async def start_bot():
 
 
 if __name__ == "__main__":
-    asyncio.run(start_bot());
+    asyncio.run(start_bot())
