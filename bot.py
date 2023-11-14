@@ -10,7 +10,7 @@ bot = Bot(token="6866096574:AAFYPz9Of6vXk3uQ8zY3Wzb4WeC9dFyfres")
 
 storage = MemoryStorage();
 
-dp = Dispatcher(bot, storage=storage);
+dp = Dispatcher(bot, storage=storage);#dddd
 
 class UserText(StatesGroup):
     text = State()
