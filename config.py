@@ -1,7 +1,7 @@
 
 #* For Aiogram
-bot_token = "6524989605:AAEd4iyRiJb8XIuL_h7VFRmCJshA3wDhI5c"
+bot_token = "YOUR_BOTFATHER_TOKEN_HERE"
 
 #* For Telethon
-api_id = 23047312
-api_hash = "6e469679dacc02eabedac9cb7ad4f697"
+api_id = YOUR_API_ID
+api_hash = "YOUR_TELETHON_TOKEN_HERE"
