@@ -1,7 +1,6 @@
 from telethon import TelegramClient, events, types
 from database import get_user_by_tg_id, get_text, get_user_ids
 from config import api_id, api_hash
-# from telethon.tl.functions.channels import JoinChannelRequest
 
 
 client = TelegramClient('tg_session', api_id, api_hash, system_version='4.16.30-vxCUSTOM')
@@ -33,9 +32,6 @@ async def my_event_handler(event):
                 except ValueError as e:
                     print(e)
 
-#! link = "https://t.me/test_128637518923"
-#! entity = await client.get_entity(link)
-#! await client(JoinChannelRequest(entity))
 
 print("Telethon App Started")
 client.start()
